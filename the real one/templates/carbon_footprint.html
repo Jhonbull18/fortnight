@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Carbon Footprint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8e9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #2e7d32;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+
+        input:focus, select:focus {
+            border-color: #2e7d32;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.2rem;
+            background-color: #2e7d32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1b5e20;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        .alert {
+            padding: 15px;
+            background-color: #f44336;
+            color: white;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .success {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Your Carbon Footprint</h1>
+
+        <!-- Flash messages for success or error -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert {% if messages[0][1] == 'success' %}success{% else %}danger{% endif %}">
+                    {{ messages[0][0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Carbon Footprint Calculation Form -->
+        <form method="POST">
+            <div class="form-group">
+                <label for="energy_source">Energy Source</label>
+                <select id="energy_source" name="energy_source" required>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Solar">Solar</option>
+                    <option value="Wind">Wind</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="energy_consumed">Energy Consumed (kWh)</label>
+                <input type="number" id="energy_consumed" name="energy_consumed" required step="0.01" placeholder="Enter energy consumed in kWh">
+            </div>
+
+            <div class="form-group">
+                <label for="carbon_emission_factor">Emission Factor (kg CO2/kWh)</label>
+                <input type="number" id="carbon_emission_factor" name="carbon_emission_factor" required step="0.01" placeholder="Enter emission factor (kg CO2/kWh)">
+            </div>
+
+            <div class="form-group">
+                <label for="usage_period">Select Usage Period</label>
+                <select id="usage_period" name="usage_period" required>
+                    <option value="daily">Daily</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate Carbon Footprint</button>
+        </form>
+
+        <!-- Back to Dashboard link -->
+        <div class="back-link">
+            <p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: You can use JavaScript to handle calculations dynamically
+        // For now, the calculation will be handled server-side when the form is submitted.
+    </script>
+</body>
+</html>
