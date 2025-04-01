@@ -1,0 +1,159 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #203627;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container for the content */
+.container {
+    background-color: #938d8d;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+p {
+    font-size: 1.125rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus state */
+input[type="text"]:focus {
+    border-color: #007bff;
+    background-color: #eaf7ff;
+    outline: none;
+}
+
+/* Button styling */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Flash messages styling */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flash {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.flash.success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.flash.danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.flash.warning {
+    background-color: #ffc107;
+    color: #333;
+}
+
+/* Hover effect on flash messages */
+.flash:hover {
+    opacity: 0.8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}

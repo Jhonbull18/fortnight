@@ -1,0 +1,110 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;  /* Light background color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container for the payment form */
+.container {
+    background-color: #ffffff;  /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title styles */
+h1 {
+    font-size: 24px;
+    color: #4CAF50;  /* Green color */
+    margin-bottom: 20px;
+}
+
+/* Paragraph text styles */
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label styling */
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input fields styling */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for input fields */
+input[type="text"]:hover {
+    border-color: #4CAF50;  /* Green border on hover */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+/* Focus effect on input fields */
+input[type="text"]:focus {
+    border-color: #4CAF50;  /* Green border on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);  /* Green glow */
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50;  /* Green background */
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Link to go back to home */
+.back-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4CAF50;
+}
+
+.back-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: #388e3c;  /* Darker green when hovering */
+}
